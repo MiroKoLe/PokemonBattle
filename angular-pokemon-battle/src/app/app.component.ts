@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-pokemon-battle';
+  path: string = "../assets/images/img_poke_logo.png";
+
 }
