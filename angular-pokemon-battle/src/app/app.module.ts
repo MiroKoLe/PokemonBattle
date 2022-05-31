@@ -8,19 +8,29 @@ import { BattlePageComponent } from './battle-page/battle-page.component';
 import { IntroPageComponent } from './intro-page/intro-page.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     BattlePageComponent,
     IntroPageComponent,
-    SiteHeaderComponent
-  ],
+    SiteHeaderComponent,
+    PokemonListComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     BrowserAnimationsModule, 
-    HttpClientModule
+    HttpClientModule, 
+    MatToolbarModule, 
+    MatButtonModule, 
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
