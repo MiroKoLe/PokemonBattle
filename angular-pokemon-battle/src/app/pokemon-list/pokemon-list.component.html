@@ -14,7 +14,7 @@
             <button mat-button color="warn" *ngIf="isDetails" (click)="backToList()">Back</button> </b>
           <div *ngIf="isDetails">
           <p class="card-text">
-            <img [src]="pokemon.sprites.front_default" alt="Pokemon"> 
+            <img src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif" alt="Pokemon"> 
             <p>
             <b>Type:</b> {{pokemon.types[0].type.name}}
             </p>
