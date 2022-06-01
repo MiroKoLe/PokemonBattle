@@ -10,11 +10,9 @@
     <div *ngFor="let pokemon of pokemons | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <b class="card-title">{{pokemon.name}} <button mat-button color="accent" (click)="getDetails()">Details</button>
-            <button mat-button color="warn" *ngIf="isDetails" (click)="backToList()">Back</button> </b>
-            <div *ngIf="isDetails">
+          <b class="card-title">{{pokemon.name}}
+             </b>
           <app-pokemon-details [pokemon]=pokemon></app-pokemon-details>
-        </div>
         </div>
       </div>
     </div>

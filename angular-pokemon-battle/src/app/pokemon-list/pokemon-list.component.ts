@@ -43,13 +43,5 @@ export class PokemonListComponent implements OnInit {
       console.log(err);
     });
   } 
-
-  getDetails(): void{
-    this._isDetails = true; 
-  }
-
-  backToList(): void{
-    this._isDetails = false; 
-  }
 }
 
