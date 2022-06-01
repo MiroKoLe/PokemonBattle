@@ -12,6 +12,9 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { PokemonRowComponent } from './pokemon-row/pokemon-row.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -21,7 +24,8 @@ import {MatTableModule} from '@angular/material/table';
     BattlePageComponent,
     IntroPageComponent,
     SiteHeaderComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    PokemonRowComponent
     ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import {MatTableModule} from '@angular/material/table';
     HttpClientModule, 
     MatToolbarModule, 
     MatButtonModule, 
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

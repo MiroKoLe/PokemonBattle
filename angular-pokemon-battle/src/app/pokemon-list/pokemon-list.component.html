@@ -7,7 +7,7 @@
   </p>
 <table class='center'>
     <tbody>   
-      <tr *ngFor="let pokemon of pokemons; let i = index" >
+      <tr *ngFor="let pokemon of pokemons | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
         <h3>{{pokemon.name}} <button mat-button color="accent" (click)="getDetails()">Details</button> <button mat-button color="warn" *ngIf="isDetails" (click)="backToList()">Back</button></h3>
         <div *ngIf="isDetails">
         <img [src]="pokemon.sprites.front_default" alt="Pokemon"> 
@@ -26,4 +26,6 @@
         </div>
       </tr>
     </tbody>
+    <ngb-pagination class="center" [pageSize] = "15" [collectionSize]="pokemons.length" [(page)]="page" [boundaryLinks]="true" aria-label="Default pagination"></ngb-pagination>
+    <pre class="center">Current page: {{page}}</pre>
   </table>

@@ -1,5 +1,6 @@
 import { PokemonService } from './../pokemon.service';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -8,14 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonListComponent implements OnInit {
   private _pokemons: any[] = [];
-  private _isDetails: boolean = false; 
+  private _isDetails: boolean = false;
+  pageSize = 15; 
+  page = 20; 
+  collectionSize = this._pokemons.length; 
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
     this.getAllPokemons();
   }
-
+  
   get pokemons(): any[]{
     return this._pokemons
   } 
@@ -45,5 +49,5 @@ export class PokemonListComponent implements OnInit {
   backToList(): void{
     this._isDetails = false; 
   }
-
 }
+
