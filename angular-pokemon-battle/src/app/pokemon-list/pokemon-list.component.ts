@@ -13,6 +13,8 @@ export class PokemonListComponent implements OnInit {
   pageSize = 15; 
   page = 20; 
   collectionSize = this._pokemons.length; 
+  pokemon: string = '';
+
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -40,7 +42,7 @@ export class PokemonListComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-  } //list has been completed. this will go in another compoment at the end
+  } 
 
   getDetails(): void{
     this._isDetails = true; 

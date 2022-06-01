@@ -13,9 +13,9 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { PokemonRowComponent } from './pokemon-row/pokemon-row.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 
 
 
@@ -26,8 +26,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     IntroPageComponent,
     SiteHeaderComponent,
     PokemonListComponent,
-    PokemonRowComponent
-    ],
+    PokemonDetailsComponent   
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
