@@ -5,3 +5,9 @@
     margin-left: auto;
     margin-right: auto;
 }
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); 
+}

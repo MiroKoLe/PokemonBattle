@@ -15,6 +15,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PokemonRowComponent } from './pokemon-row/pokemon-row.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -36,7 +37,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatButtonModule, 
     MatTableModule,
     MatPaginatorModule,
-    NgbModule
+    NgbModule, 
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

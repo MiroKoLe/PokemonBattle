@@ -5,33 +5,37 @@
 
   </mat-toolbar>
   </p>
-<table class='center'>
-    <tbody>   
-      <tr *ngFor="let pokemon of pokemons | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">{{pokemon.name}} <button mat-button color="accent" (click)="getDetails()">Details</button>
-              <button mat-button color="warn" *ngIf="isDetails" (click)="backToList()">Back</button> </h5>
-            <div *ngIf="isDetails">
-            <p class="card-text">
-              <img [src]="pokemon.sprites.front_default" alt="Pokemon"> 
-              <p>
-              <b>Type:</b> {{pokemon.types[0].type.name}}
-              </p>
-              <p>
-              <b>Height:</b> {{pokemon.types[0].type.name}}
-              </p>
-              <p>
-              <b>Health:</b> {{pokemon.stats[0].base_stat}}
-              </p>
-               <p>
-              <b>Attack Power:</b> {{pokemon.stats[1].base_stat}}
-              </p>
-            </div>
+
+  <div class="grid">
+    <div *ngFor="let pokemon of pokemons | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <b class="card-title">{{pokemon.name}} <button mat-button color="accent" (click)="getDetails()">Details</button>
+            <button mat-button color="warn" *ngIf="isDetails" (click)="backToList()">Back</button> </b>
+          <div *ngIf="isDetails">
+          <p class="card-text">
+            <img [src]="pokemon.sprites.front_default" alt="Pokemon"> 
+            <p>
+            <b>Type:</b> {{pokemon.types[0].type.name}}
+            </p>
+            <p>
+            <b>Height:</b> {{pokemon.types[0].type.name}}
+            </p>
+            <p>
+            <b>Health:</b> {{pokemon.stats[0].base_stat}}
+            </p>
+             <p>
+            <b>Attack Power:</b> {{pokemon.stats[1].base_stat}}
+            </p>
           </div>
         </div>
-      </tr>
-    </tbody>
-    <ngb-pagination class="center" [pageSize] = "15" [collectionSize]="pokemons.length" [(page)]="page" [boundaryLinks]="true" aria-label="Default pagination"></ngb-pagination>
-    <pre class="center">Current page: {{page}}</pre>
-  </table>
+      </div>
+    </div>
+  </div>
+  <div class="center">
+    <ngb-pagination [pageSize] = "15" [collectionSize]="pokemons.length" [(page)]="page" [boundaryLinks]="true" aria-label="Default pagination"></ngb-pagination>
+    <pre>Current page: {{page}}</pre>
+  </div>
+ 
+
+
