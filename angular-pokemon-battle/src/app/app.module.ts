@@ -16,6 +16,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
+
 
 
 
@@ -38,7 +42,9 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
     MatTableModule,
     MatPaginatorModule,
     NgbModule, 
-    MatGridListModule
+    MatGridListModule, 
+    MatCardModule, 
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

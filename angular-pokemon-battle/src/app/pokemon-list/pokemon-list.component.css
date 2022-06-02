@@ -11,3 +11,9 @@
     padding: 20px;
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); 
 }
+.success {
+    background-color:white;
+}
+.warning {
+    background-color: rgb(250, 236, 236);
+}

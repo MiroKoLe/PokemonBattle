@@ -29,8 +29,7 @@ export class BattlePageComponent implements OnInit {
 
   
   ngOnInit(): void {
-    this.getRandomPokemons();
-    // this.getAllPokemons();
+     this.getAllPokemons();
   }
 
   getAllPokemons(): void {
@@ -45,22 +44,10 @@ export class BattlePageComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-  }
-
-  getRandomPokemons(): void {
-    this.getAllPokemons(); 
     let firstPokemon = this._pokemons[Math.floor(Math.random() * this._pokemons.length)];
     console.log(firstPokemon);
     let secondPokemon = this._pokemons[Math.floor(Math.random() * this._pokemons.length)];
     console.log(secondPokemon);
-
-    if(firstPokemon.name.length > secondPokemon.name.length)
-    {
-      this._hasWon = true; 
-    }
-    else
-    {
-      this._hasWon = false; 
-    }
   }
+
 }
