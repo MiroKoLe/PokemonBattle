@@ -54,7 +54,7 @@ export class BattlePageComponent implements OnInit {
   }
 
   pokemonFight(): void {
-    if(this._firstPokemon.height > this._secondPokemon.height)
+    if(this._firstPokemon.base_experience > this._secondPokemon.base_experience)
     {
       this._winnerPokemon = this._firstPokemon;
     }

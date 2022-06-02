@@ -10,7 +10,7 @@
     <div *ngFor="let pokemon of pokemons | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
       <div class="card d-flex justify-content-center" style="width: 18rem;">
         <div class="card-body">
-          <b class="card-title">{{pokemon.name}}
+          <b class="card-title">{{pokemon.name | titlecase}}
              </b>
           <app-pokemon-details [pokemon]=pokemon></app-pokemon-details>
         </div>

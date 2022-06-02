@@ -8,8 +8,8 @@
 mat-grid-tile{
   background-color: lightblue;
 }
-mat-grid-tile__winner{
-  background-color:  rgb(118, 233, 118);
+.winnerColor{
+  background-color:  rgb(180, 252, 180);
 }
 .centerButton {
   margin: 0;
@@ -22,5 +22,13 @@ mat-grid-tile__winner{
 .container { 
     height: 200px;
     position: relative;
+}
+.sheet_item{
+  display:flex; 
+  flex-direction: column;
+  margin-top: 20px
+}
+.multi_lines_text { 
+  white-space: pre-line; 
 }
 
