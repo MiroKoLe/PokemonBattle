@@ -9,14 +9,24 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BattlePageComponent implements OnInit {
   private _firstPokemon: any; 
   private _secondPokemon: any; 
+  private _existingPokemon: any; 
   private _pokemons: any[] = [];
   private _winnerPokemon: any = null;  
+  private _newBattle: boolean = false;
 
   constructor(private pokemonService: PokemonService) { }
 
   get pokemons(): any[]{
     return this._pokemons
   } 
+
+  get existingPokemon(): any{
+    return this._existingPokemon
+  }
+
+  get newBattle(): boolean{
+    return this._newBattle
+  }
 
   get firstPokemon(): any{
     return this._firstPokemon
@@ -62,7 +72,42 @@ export class BattlePageComponent implements OnInit {
     {
       this._winnerPokemon = this._secondPokemon;
     }
-    localStorage.setItem("winnerPokemon", JSON.stringify(this._winnerPokemon) ) //ako hoću pretvoriti u objekt JSON.Parse(localStorage.getItem("winnerPokemon"))
+    localStorage.setItem("winnerPokemon", JSON.stringify(this._winnerPokemon)) 
+  }
 
+  newFight(): void 
+  {
+    this._newBattle = true; 
+    const secondRandomId = Math.floor((Math.random() * 99) + 1);
+    const firstRandomId = Math.floor((Math.random() * 99) + 1); 
+    this._existingPokemon = JSON.parse(localStorage.getItem('winnerPokemon') || '{}');
+
+    this.pokemonService.getPokemonById(firstRandomId).subscribe((response: any) => {
+      this._firstPokemon = response})
+    
+    this.pokemonService.getPokemonById(secondRandomId).subscribe((response: any) => {
+      this._secondPokemon = response;
+
+      if(this._existingPokemon.base_experience > this._firstPokemon.base_experience)
+      {
+        this._winnerPokemon = this._existingPokemon;
+      }
+      else if(this._firstPokemon.base_experience > this._secondPokemon.base_experience)
+      {
+      this._winnerPokemon = this._firstPokemon;
+      }
+      else 
+      {
+      this._winnerPokemon = this._secondPokemon;
+      }
+
+    });
+  }
+
+  endGame(): void 
+  {
+    localStorage.clear();
+    this._winnerPokemon = false; 
+    this.getAllPokemons();
   }
 }

@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BattlePageComponent } from './battle-page/battle-page.component';
 import { IntroPageComponent } from './intro-page/intro-page.component';
-import { SiteHeaderComponent } from './site-header/site-header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
@@ -20,15 +19,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     BattlePageComponent,
     IntroPageComponent,
-    SiteHeaderComponent,
     PokemonListComponent,
     PokemonDetailsComponent   
    ],

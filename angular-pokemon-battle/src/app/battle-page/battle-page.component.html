@@ -6,28 +6,44 @@
 </p>
 
 <mat-grid-list cols="2" rowHeight="100px" gutterSize="15px" *ngIf="firstPokemon && secondPokemon">
-    <mat-grid-tile class="card-title sheet_item">
+    <mat-grid-tile class="card-title sheet_item" *ngIf="!newBattle">
       <b>Name: {{firstPokemon.name | titlecase}}</b>
       <img src="{{firstPokemon.sprites.front_default}}">
     </mat-grid-tile>
-    <mat-grid-tile class="card-title sheet_item"><b>Name: {{secondPokemon.name | titlecase}}</b><img src="{{secondPokemon.sprites.front_default}}" ></mat-grid-tile>
+    <mat-grid-tile class="card-title sheet_item" *ngIf="newBattle">
+      <b>Name: {{existingPokemon.name | titlecase}}</b>
+      <img src="{{existingPokemon.sprites.front_default}}">
+    </mat-grid-tile>
+    <mat-grid-tile class="card-title sheet_item"><b>Name: {{secondPokemon.name | titlecase}}
+    </b><img src="{{secondPokemon.sprites.front_default}}" ></mat-grid-tile>
     <mat-grid-tile class="card-title sheet_item" *ngIf="winnerPokemon"><b>{{firstPokemon.name | titlecase }}</b>&nbsp; has {{firstPokemon.base_experience}} experience points!</mat-grid-tile>
     <mat-grid-tile class="card-title sheet_item" *ngIf="winnerPokemon"><b>{{secondPokemon.name  | titlecase }}</b>&nbsp; has {{secondPokemon.base_experience}} experience points!</mat-grid-tile>
-
-
+    
   </mat-grid-list>
 
 
   <div class="container">
     <div class="centerButton">
-      <button type="button" class="btn btn-danger" (click)="pokemonFight()" [disabled]="winnerPokemon">Fight</button>
+      <button type="button" class="btn btn-danger" (click)="pokemonFight()" *ngIf="!winnerPokemon">Start Poke Battle</button>
     </div>
   </div>
 
   <mat-grid-list cols="1" rowHeight="100px" gutterSize="15px" *ngIf="winnerPokemon">
-    <p class="center"></p>"Winner is:"
     <mat-grid-tile class="winnerColor"><b>{{winnerPokemon.name | titlecase }}</b> <img src="{{winnerPokemon.sprites.front_default}}"><b>is a Winner!</b></mat-grid-tile>
   </mat-grid-list>
+
+  <div class="container">
+    <div class="centerButton">
+      <button type="button" class="btn btn-primary" (click)="newFight()" *ngIf="winnerPokemon">Start New Battle!</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="centerButton">
+      <button type="button" class="btn btn-light" (click)="endGame()" *ngIf="winnerPokemon">End Game</button>
+    </div>
+  </div>
+
 
 
 
