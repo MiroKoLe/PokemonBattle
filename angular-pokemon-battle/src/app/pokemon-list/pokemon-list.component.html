@@ -8,7 +8,7 @@
 
   <div class="grid">
     <div *ngFor="let pokemon of pokemons | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-      <div class="card" style="width: 18rem;">
+      <div class="card d-flex justify-content-center" style="width: 18rem;">
         <div class="card-body">
           <b class="card-title">{{pokemon.name}}
              </b>
@@ -17,9 +17,8 @@
       </div>
     </div>
   </div>
-  <div class="center">
-    <ngb-pagination [pageSize] = "15" [collectionSize]="pokemons.length" [(page)]="page" [boundaryLinks]="true" aria-label="Default pagination"></ngb-pagination>
-    <pre>Current page: {{page}}</pre>
+  <div class="d-flex justify-content-center">
+    <ngb-pagination [pageSize] = "15" [collectionSize]="pokemons.length" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
   </div>
  
 

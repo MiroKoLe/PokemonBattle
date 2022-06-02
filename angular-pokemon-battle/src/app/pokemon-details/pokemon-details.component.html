@@ -1,4 +1,5 @@
-<button mat-button color="accent" (click)="getDetails()">Details</button> <button mat-button color="warn" *ngIf="isDetails" (click)="backToList()">Back</button>
+<button mat-button color="accent" (click)="getDetails()">Details</button> 
+<button mat-button color="warn" *ngIf="isDetails" (click)="backToList()">Back</button>
 
 <div *ngIf="isDetails">
     <p class="card-text" >

@@ -45,13 +45,22 @@ export class BattlePageComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-  } //list has been completed. this will go in another compoment at the end
+  }
 
   getRandomPokemons(): void {
     this.getAllPokemons(); 
-    const size = 3; 
-     this._twoPokemons = this._pokemons.slice(0, size)
-     console.log(this._twoPokemons)
-    
+    let firstPokemon = this._pokemons[Math.floor(Math.random() * this._pokemons.length)];
+    console.log(firstPokemon);
+    let secondPokemon = this._pokemons[Math.floor(Math.random() * this._pokemons.length)];
+    console.log(secondPokemon);
+
+    if(firstPokemon.name.length > secondPokemon.name.length)
+    {
+      this._hasWon = true; 
+    }
+    else
+    {
+      this._hasWon = false; 
+    }
   }
 }
