@@ -24,8 +24,8 @@ export class PokemonService {
     .pipe(catchError(this.errorHandler));
   }
 
-  getPokemonById(id: string): Observable<any>{
-    return this.http.get(`https://pokeapi.co/api/v2/ability/${id}`)
+  getPokemonById(id: number): Observable<any>{
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .pipe(catchError(this.errorHandler))
   }
 

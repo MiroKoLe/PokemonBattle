@@ -5,10 +5,22 @@
 </mat-toolbar>
 </p>
 
+<mat-grid-list cols="2" rowHeight="100px" gutterSize="15px" *ngIf="firstPokemon && secondPokemon">
+    <mat-grid-tile class="card-title">{{firstPokemon.name}} {{firstPokemon.height}} <img src="{{firstPokemon.sprites.front_default}}" ></mat-grid-tile>
+    <mat-grid-tile class="card-title">{{secondPokemon.name}} {{secondPokemon.height}}<img src="{{secondPokemon.sprites.front_default}}" ></mat-grid-tile>
+  </mat-grid-list>
 
-<mat-grid-list cols="2" rowHeight="100px" gutterSize="15px" *ngFor="let pokemon of pokemons | slice:1:2" >
-    <mat-grid-tile>{{firstPokemon}} <img src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif" ></mat-grid-tile>
+  <div class="container">
+    <div class="centerButton">
+      <button type="button" class="btn btn-danger" (click)="pokemonFight()">Fight</button>
+    </div>
+  </div>
+
+  <mat-grid-list cols="1" rowHeight="100px" gutterSize="15px" *ngIf="winnerPokemon">
+    <p class="center"></p>"Winner is:"
+    <mat-grid-tile>{{winnerPokemon.name}} <img src="{{winnerPokemon.sprites.front_default}}" ></mat-grid-tile>
   </mat-grid-list>
-  <mat-grid-list cols="2" rowHeight="100px" gutterSize="15px" *ngFor="let pokemon of pokemons | slice:1:2" >
-    <mat-grid-tile>{{secondPokemon}} <img src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif" ></mat-grid-tile>
-  </mat-grid-list>
+
+
+
+

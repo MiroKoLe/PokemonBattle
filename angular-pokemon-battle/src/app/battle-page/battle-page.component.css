@@ -8,3 +8,19 @@
 mat-grid-tile{
   background-color: lightblue;
 }
+mat-grid-tile__winner{
+  background-color:  rgb(118, 233, 118);
+}
+.centerButton {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.container { 
+    height: 200px;
+    position: relative;
+}
+

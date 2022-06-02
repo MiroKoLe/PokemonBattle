@@ -15,7 +15,6 @@ export class PokemonListComponent implements OnInit {
   collectionSize = this._pokemons.length; 
   pokemon: string = '';
 
-
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
@@ -29,6 +28,7 @@ export class PokemonListComponent implements OnInit {
   get isDetails(): boolean{
     return this._isDetails
   }
+
 
   getAllPokemons(): void {
     this.pokemonService.get().subscribe((response: any) => {
