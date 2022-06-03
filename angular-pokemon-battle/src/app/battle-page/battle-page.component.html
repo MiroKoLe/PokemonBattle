@@ -24,7 +24,7 @@
 
   <div class="container">
     <div class="centerButton">
-      <button type="button" class="btn btn-danger" (click)="pokemonFight()" *ngIf="!winnerPokemon">Start Poke Battle</button>
+      <button type="button" class="btn btn-danger" (click)="pokemonFight()" *ngIf="!winnerPokemon">Start Poke Battle!</button>
     </div>
   </div>
 
@@ -40,7 +40,7 @@
 
   <div class="container">
     <div class="centerButton">
-      <button type="button" class="btn btn-light" (click)="endGame()" *ngIf="winnerPokemon">End Game</button>
+      <button class="btn btn-light cursor-pointer" (click)="endGame()" *ngIf="winnerPokemon">End Game</button>
     </div>
   </div>
 

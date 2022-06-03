@@ -47,6 +47,7 @@ export class BattlePageComponent implements OnInit {
 
 
   getAllPokemons(): void {
+    localStorage.clear();
     this.pokemonService.get().subscribe((response: any) => {
       const firstRandomId = Math.floor((Math.random() * 99) + 1); 
       const secondRandomId = Math.floor((Math.random() * 99) + 1);
@@ -88,15 +89,11 @@ export class BattlePageComponent implements OnInit {
     this.pokemonService.getPokemonById(secondRandomId).subscribe((response: any) => {
       this._secondPokemon = response;
 
-      if(this._existingPokemon.base_experience > this._firstPokemon.base_experience)
+      if(this._existingPokemon.base_experience > this._secondPokemon.base_experience)
       {
         this._winnerPokemon = this._existingPokemon;
       }
-      else if(this._firstPokemon.base_experience > this._secondPokemon.base_experience)
-      {
-      this._winnerPokemon = this._firstPokemon;
-      }
-      else 
+      else if(this._firstPokemon.base_experience < this._secondPokemon.base_experience)
       {
       this._winnerPokemon = this._secondPokemon;
       }
@@ -106,8 +103,7 @@ export class BattlePageComponent implements OnInit {
 
   endGame(): void 
   {
-    localStorage.clear();
-    this._winnerPokemon = false; 
+    window.location.reload();
     this.getAllPokemons();
   }
 }
