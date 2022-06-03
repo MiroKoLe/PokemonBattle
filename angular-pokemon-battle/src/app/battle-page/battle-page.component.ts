@@ -1,3 +1,4 @@
+import { LoaderService } from './../loader/loader.service';
 import { PokemonService } from './../pokemon.service';
 import { Component, Input, OnInit } from '@angular/core';
 

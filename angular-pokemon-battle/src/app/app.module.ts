@@ -1,3 +1,4 @@
+import { HttpInterceptorInterceptor } from './loader/http.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -6,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BattlePageComponent } from './battle-page/battle-page.component';
 import { IntroPageComponent } from './intro-page/intro-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { MatButtonModule} from '@angular/material/button';
@@ -17,6 +18,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 
 @NgModule({
@@ -39,9 +42,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     NgbModule, 
     MatGridListModule, 
     MatCardModule, 
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatProgressBarModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorInterceptor, multi: true}  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
