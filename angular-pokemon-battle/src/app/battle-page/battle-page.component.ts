@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./battle-page.component.css']
 })
 export class BattlePageComponent implements OnInit {
+  clicked = false; 
   private _firstPokemon: any; 
   private _secondPokemon: any; 
   private _existingPokemon: any; 
