@@ -1,3 +1,4 @@
+import { getCurrencySymbol } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -26,5 +27,4 @@ export class PokemonDetailsComponent implements OnInit {
   backToList(): void{
     this._isDetails = false; 
   }
-
 }

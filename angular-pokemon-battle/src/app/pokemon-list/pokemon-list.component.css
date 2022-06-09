@@ -17,4 +17,12 @@
 .warning {
     background-color: rgb(250, 236, 236);
 }
+.pokemon-card {
+    max-width: 400px;
+  }
+  
+  .pokemon-header-image {
+    background-image: url('https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif');
+    background-size: cover;
+  }
 
