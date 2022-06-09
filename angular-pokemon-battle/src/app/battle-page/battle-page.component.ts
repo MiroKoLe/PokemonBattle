@@ -15,6 +15,7 @@ export class BattlePageComponent implements OnInit {
   private _pokemons: any[] = [];
   private _winnerPokemon: any = null;  
   private _newBattle: boolean = false;
+  private _listOfWinners: any[] = [];
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -106,7 +107,13 @@ export class BattlePageComponent implements OnInit {
 
   endGame(): void 
   {
+    this.listOfWinners();
     window.location.reload();
     this.getTwoPokemons();
+  }
+
+  listOfWinners(): void
+  {
+    this._listOfWinners.push(this._winnerPokemon);
   }
 }
