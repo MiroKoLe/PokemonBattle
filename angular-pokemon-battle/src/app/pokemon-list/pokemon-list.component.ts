@@ -29,7 +29,6 @@ export class PokemonListComponent implements OnInit {
     return this._isDetails
   }
 
-
   getAllPokemons(): void {
     this.pokemonService.get().subscribe((response: any) => {
       response.results.forEach((result: { name: string; }) => {
