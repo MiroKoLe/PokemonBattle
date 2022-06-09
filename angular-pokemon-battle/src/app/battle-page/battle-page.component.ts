@@ -80,6 +80,7 @@ export class BattlePageComponent implements OnInit {
   newFight(): void 
   {
     this._newBattle = true; 
+    this._winnerPokemon = false; 
     const secondRandomId = Math.floor((Math.random() * 99) + 1);
     const firstRandomId = Math.floor((Math.random() * 99) + 1); 
     this._existingPokemon = JSON.parse(localStorage.getItem('winnerPokemon') || '{}');

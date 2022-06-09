@@ -16,7 +16,8 @@
     </mat-grid-tile>
     <mat-grid-tile class="card-title sheet_item"><b>Name: {{secondPokemon.name | titlecase}}
     </b><img src="{{secondPokemon.sprites.front_default}}" ></mat-grid-tile>
-    <mat-grid-tile class="card-title sheet_item" *ngIf="winnerPokemon"><b>{{firstPokemon.name | titlecase }}</b>&nbsp; has {{firstPokemon.base_experience}} experience points!</mat-grid-tile>
+    <mat-grid-tile class="card-title sheet_item" *ngIf="newBattle"><b>{{existingPokemon.name | titlecase }}</b>&nbsp; has {{existingPokemon.base_experience}} experience points!</mat-grid-tile>
+    <mat-grid-tile class="card-title sheet_item" *ngIf="winnerPokemon && !newBattle"><b>{{firstPokemon.name | titlecase }}</b>&nbsp; has {{firstPokemon.base_experience}} experience points!</mat-grid-tile>
     <mat-grid-tile class="card-title sheet_item" *ngIf="winnerPokemon"><b>{{secondPokemon.name  | titlecase }}</b>&nbsp; has {{secondPokemon.base_experience}} experience points!</mat-grid-tile>
     
   </mat-grid-list>
